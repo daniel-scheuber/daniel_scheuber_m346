@@ -1,15 +1,16 @@
-#cloud-config
-users:
-  - name: ubuntu
-    sudo: ALL=(ALL) NOPASSWD:ALL
-    groups: users, admin
-    home: /home/ubuntu
-    shell: /bin/bash
-    ssh_authorized_keys:
-      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC0WGP1EZykEtv5YGC9nMiPFW3U3DmZNzKFO5nEu6uozEHh4jLZzPNHSrfFTuQ2GnRDSt+XbOtTLdcj26+iPNiFoFha42aCIzYjt6V8Z+SQ9pzF4jPPzxwXfDdkEWylgoNnZ+4MG1lNFqa8aO7F62tX0Yj5khjC0Bs7Mb2cHLx1XZaxJV6qSaulDuBbLYe8QUZXkMc7wmob3PM0kflfolR3LE7LResIHWa4j4FL6r5cQmFlDU2BDPpKMFMGUfRSFiUtaWBNXFOWHQBC2+uKmuMPYP4vJC9sBgqMvPN/X2KyemqdMvdKXnCfrzadHuSSJYEzD64Cve5Zl9yVvY4AqyBD aws-key       
-ssh_pwauth: false
-disable_root: false 
-package_update: true
-packages:
-  - curl 
-  - wget 
+#cloud-config  # Kennzeichnet die Datei als Cloud-init Konfigurationsdatei (YAML-Format)
+users:  # Definition einer Benutzerliste, die erstellt oder angepasst wird
+  - name: ubuntu  # Erstellt einen Benutzer mit dem Namen 'ubuntu'
+    sudo: ALL=(ALL) NOPASSWD:ALL  # Gibt dem Benutzer uneingeschränkte sudo-Rechte ohne Passwortabfrage
+    groups: users, admin  # Fügt den Benutzer den Gruppen 'users' und 'admin' hinzu
+    home: /home/ubuntu  # Setzt das Home-Verzeichnis des Benutzers auf /home/ubuntu
+    shell: /bin/bash  # Legt die Standard-Shell des Benutzers auf /bin/bash fest
+    ssh_authorized_keys:  # Definiert die SSH-Schlüssel, die für diesen Benutzer erlaubt sind
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC0WGP1EZykEtv5YGC9nMiPFW3U3DmZNzKFO5nEu6uozEHh4jLZzPNHSrfFTuQ2GnRDSt+XbOtTLdcj26+iPNiFoFha42aCIzYjt6V8Z+SQ9pzF4jPPzxwXfDdkEWylgoNnZ+4MG1lNFqa8aO7F62tX0Yj5khjC0Bs7Mb2cHLx1XZaxJV6qSaulDuBbLYe8QUZXkMc7wmob3PM0kflfolR3LE7LResIHWa4j4FL6r5cQmFlDU2BDPpKMFMGUfRSFiUtaWBNXFOWHQBC2+uKmuMPYP4vJC9sBgqMvPN/X2KyemqdMvdKXnCfrzadHuSSJYEzD64Cve5Zl9yVvY4AqyBD aws-key  
+      # Öffentlicher SSH-Schlüssel, der für die Anmeldung ohne Passwort verwendet werden darf
+ssh_pwauth: false  # Deaktiviert die Anmeldung per Passwort über SSH (nur SSH-Key-Login erlaubt)
+disable_root: false  # Erlaubt den Root-Benutzer (nicht deaktiviert)
+package_update: true  # Führt ein Update der Paketlisten durch (apt-get update)
+packages:  # Liste von Paketen, die bei der Initialisierung installiert werden sollen
+  - curl  # Installiert das Tool 'curl' (zum Übertragen von Daten über URLs)
+  - wget  # Installiert das Tool 'wget' (zum Herunterladen von Dateien aus dem Internet)
