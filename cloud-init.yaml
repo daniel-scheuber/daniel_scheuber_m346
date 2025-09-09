@@ -6,7 +6,7 @@ users:  # Definition einer Benutzerliste, die erstellt oder angepasst wird
     home: /home/ubuntu  # Setzt das Home-Verzeichnis des Benutzers auf /home/ubuntu
     shell: /bin/bash  # Legt die Standard-Shell des Benutzers auf /bin/bash fest
     ssh_authorized_keys:  # Definiert die SSH-Schlüssel, die für diesen Benutzer erlaubt sind
-      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC0WGP1EZykEtv5YGC9nMiPFW3U3DmZNzKFO5nEu6uozEHh4jLZzPNHSrfFTuQ2GnRDSt+XbOtTLdcj26+iPNiFoFha42aCIzYjt6V8Z+SQ9pzF4jPPzxwXfDdkEWylgoNnZ+4MG1lNFqa8aO7F62tX0Yj5khjC0Bs7Mb2cHLx1XZaxJV6qSaulDuBbLYe8QUZXkMc7wmob3PM0kflfolR3LE7LResIHWa4j4FL6r5cQmFlDU2BDPpKMFMGUfRSFiUtaWBNXFOWHQBC2+uKmuMPYP4vJC9sBgqMvPN/X2KyemqdMvdKXnCfrzadHuSSJYEzD64Cve5Zl9yVvY4AqyBD aws-key  
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDTs0haa/p1gU01Nr0ZbzhsrC2WRzFt4HCrywFLxncoTzBxJlU5MBSGkZUv2yzjkEoFHpNtRCz5ofvZAkYivKdk9p/8m6nYWGIGHa9gmOSG9/VKbF8NaGPaevwFzo42C+ciB/7Xu8BWxwk6JygJWR2ZCxZSMt8S3AFaoUztWxD7xIvfGvwbaaNskKi3LXbNVcRC+wefOvM3hbjufXoDkveswEgLYWgIccfENMXO/z+VYW1Bu+OPD7YiACT6W6qGakMnHCuO9CQJZXGyaiWVB3Fh9Wwp3he7o0VGc2YHjSU4gzP6K08X480bYmlDIdLgNDLsojjw9Y1TARPu6jiQdGpP aws-key  
       # Öffentlicher SSH-Schlüssel, der für die Anmeldung ohne Passwort verwendet werden darf
 ssh_pwauth: false  # Deaktiviert die Anmeldung per Passwort über SSH (nur SSH-Key-Login erlaubt)
 disable_root: false  # Erlaubt den Root-Benutzer (nicht deaktiviert)
